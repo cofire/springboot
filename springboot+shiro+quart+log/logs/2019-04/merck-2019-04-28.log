@@ -1,0 +1,70 @@
+2019-04-28 17:16:14.652 INFO  --- [HikariDataSource.java:381][Thread-7] - HikariPool-1 - Shutdown initiated...
+2019-04-28 17:16:14.659 INFO  --- [HikariDataSource.java:383][Thread-7] - HikariPool-1 - Shutdown completed.
+2019-04-28 17:16:14.993 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 37616 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:16:14.993 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:16:16.312 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:16:16.496 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 1.55 seconds (JVM running for 63.438)
+2019-04-28 17:19:14.926 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 40816 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:19:14.930 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:19:18.843 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:19:19.522 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 4.883 seconds (JVM running for 5.718)
+2019-04-28 17:19:30.567 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-1] - HikariPool-1 - Starting...
+2019-04-28 17:19:31.048 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-1] - HikariPool-1 - Start completed.
+2019-04-28 17:21:30.467 INFO  --- [HikariDataSource.java:381][Thread-8] - HikariPool-1 - Shutdown initiated...
+2019-04-28 17:21:30.473 INFO  --- [HikariDataSource.java:383][Thread-8] - HikariPool-1 - Shutdown completed.
+2019-04-28 17:21:30.849 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 40816 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:21:30.850 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:21:32.150 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:21:32.364 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 1.569 seconds (JVM running for 138.56)
+2019-04-28 17:21:37.062 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-1] - HikariPool-2 - Starting...
+2019-04-28 17:21:37.249 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-1] - HikariPool-2 - Start completed.
+2019-04-28 17:21:37.259 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-1] - 登录成功！
+2019-04-28 17:22:18.628 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 21920 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:22:18.644 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:22:22.929 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:22:23.532 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 5.293 seconds (JVM running for 6.09)
+2019-04-28 17:22:28.547 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-1] - HikariPool-1 - Starting...
+2019-04-28 17:22:28.945 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-1] - HikariPool-1 - Start completed.
+2019-04-28 17:22:28.982 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-1] - 登录成功！
+2019-04-28 17:24:49.774 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 41552 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:24:49.779 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:24:53.506 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:24:54.126 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 4.649 seconds (JVM running for 5.482)
+2019-04-28 17:25:06.884 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-1] - HikariPool-1 - Starting...
+2019-04-28 17:25:07.291 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-1] - HikariPool-1 - Start completed.
+2019-04-28 17:25:07.297 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:25:07.317 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:25:07.336 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - <==      Total: 1
+2019-04-28 17:25:07.358 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-1] - 登录成功！
+2019-04-28 17:25:56.108 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 36680 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:25:56.112 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:25:59.998 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:26:00.634 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 4.845 seconds (JVM running for 5.656)
+2019-04-28 17:26:09.590 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-1] - HikariPool-1 - Starting...
+2019-04-28 17:26:09.954 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-1] - HikariPool-1 - Start completed.
+2019-04-28 17:26:09.959 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:26:09.978 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:26:09.994 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - <==      Total: 1
+2019-04-28 17:26:10.012 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-1] - 登录成功！
+2019-04-28 17:26:16.890 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:26:16.891 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:26:16.894 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - <==      Total: 1
+2019-04-28 17:26:16.895 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-2] - 登录成功！
+2019-04-28 17:26:22.430 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-3] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:26:22.431 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-3] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:26:22.439 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-3] - <==      Total: 1
+2019-04-28 17:26:22.440 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-3] - 登录成功！
+2019-04-28 17:26:57.751 INFO  --- [StartupInfoLogger.java:50][restartedMain] - Starting Application on DESKTOP-TL9S3KD with PID 35616 (D:\work\2018\merckActrl\merckActrlNew\target\classes started by ThinkPad in D:\work\2018\merckActrl\merckActrlNew)
+2019-04-28 17:26:57.755 INFO  --- [SpringApplication.java:680][restartedMain] - No active profile set, falling back to default profiles: default
+2019-04-28 17:27:01.733 WARN  --- [ThymeleafAutoConfiguration.java:104][restartedMain] - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-28 17:27:02.363 INFO  --- [StartupInfoLogger.java:59][restartedMain] - Started Application in 4.899 seconds (JVM running for 5.707)
+2019-04-28 17:27:24.423 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-2] - HikariPool-1 - Starting...
+2019-04-28 17:27:24.764 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-2] - HikariPool-1 - Start completed.
+2019-04-28 17:27:24.770 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:27:24.790 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:27:24.810 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-2] - <==      Total: 1
+2019-04-28 17:27:24.828 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-2] - 登录成功！
+2019-04-28 17:27:30.006 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==>  Preparing: select 'true' as QUERYID, USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3 from cf_user WHERE ( USER_ID = ? and PASSWD = ? ) 
+2019-04-28 17:27:30.007 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - ==> Parameters: admin(String), ceb4f32325eda6142bd65215f4c0f371(String)
+2019-04-28 17:27:30.011 DEBUG --- [BaseJdbcLogger.java:145][http-nio-8080-exec-1] - <==      Total: 1
+2019-04-28 17:27:30.012 INFO  --- [LoginServiceImpl.java:38][http-nio-8080-exec-1] - 登录成功！

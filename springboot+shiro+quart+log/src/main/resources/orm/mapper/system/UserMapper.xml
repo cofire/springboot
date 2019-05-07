@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cf.dao.mapper.system.UserMapper">
+  <resultMap id="BaseResultMap" type="com.cf.dao.model.system.User">
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="PASSWD" jdbcType="VARCHAR" property="passwd" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="EMPLOYEE_ID" jdbcType="VARCHAR" property="employeeId" />
+    <result column="BRANCH_NO" jdbcType="VARCHAR" property="branchNo" />
+    <result column="LAST_IP" jdbcType="VARCHAR" property="lastIp" />
+    <result column="LAST_DATE" jdbcType="VARCHAR" property="lastDate" />
+    <result column="WRONG_PWD_COUNT" jdbcType="DECIMAL" property="wrongPwdCount" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="accountNonExpired" jdbcType="VARCHAR" property="accountnonexpired" />
+    <result column="accountNonLocked" jdbcType="VARCHAR" property="accountnonlocked" />
+    <result column="credentialsNonExpired" jdbcType="VARCHAR" property="credentialsnonexpired" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="CHECK_STATUS" jdbcType="VARCHAR" property="checkStatus" />
+    <result column="CHECKER" jdbcType="VARCHAR" property="checker" />
+    <result column="CHECK_TIME" jdbcType="VARCHAR" property="checkTime" />
+    <result column="CHANGE_PWD_FLAG" jdbcType="VARCHAR" property="changePwdFlag" />
+    <result column="FILLER1" jdbcType="VARCHAR" property="filler1" />
+    <result column="FILLER2" jdbcType="VARCHAR" property="filler2" />
+    <result column="FILLER3" jdbcType="VARCHAR" property="filler3" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    USER_ID, PASSWD, USER_NAME, EMPLOYEE_ID, BRANCH_NO, LAST_IP, LAST_DATE, WRONG_PWD_COUNT, 
+    CREATOR, CREATE_TIME, accountNonExpired, accountNonLocked, credentialsNonExpired, 
+    STATUS, CHECK_STATUS, CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, FILLER1, FILLER2, FILLER3
+  </sql>
+  <select id="selectByExample" parameterType="com.cf.dao.model.system.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from cf_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitSize >= 0">
+      limit #{limitStart} , #{limitSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cf_user
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cf_user
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cf.dao.model.system.UserExample">
+    delete from cf_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cf.dao.model.system.User">
+    insert into cf_user (USER_ID, PASSWD, USER_NAME, 
+      EMPLOYEE_ID, BRANCH_NO, LAST_IP, 
+      LAST_DATE, WRONG_PWD_COUNT, CREATOR, 
+      CREATE_TIME, accountNonExpired, accountNonLocked, 
+      credentialsNonExpired, STATUS, CHECK_STATUS, 
+      CHECKER, CHECK_TIME, CHANGE_PWD_FLAG, 
+      FILLER1, FILLER2, FILLER3
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{employeeId,jdbcType=VARCHAR}, #{branchNo,jdbcType=VARCHAR}, #{lastIp,jdbcType=VARCHAR}, 
+      #{lastDate,jdbcType=VARCHAR}, #{wrongPwdCount,jdbcType=DECIMAL}, #{creator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{accountnonexpired,jdbcType=VARCHAR}, #{accountnonlocked,jdbcType=VARCHAR}, 
+      #{credentialsnonexpired,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{checkStatus,jdbcType=VARCHAR}, 
+      #{checker,jdbcType=VARCHAR}, #{checkTime,jdbcType=VARCHAR}, #{changePwdFlag,jdbcType=VARCHAR}, 
+      #{filler1,jdbcType=VARCHAR}, #{filler2,jdbcType=VARCHAR}, #{filler3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cf.dao.model.system.User">
+    insert into cf_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="passwd != null">
+        PASSWD,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="employeeId != null">
+        EMPLOYEE_ID,
+      </if>
+      <if test="branchNo != null">
+        BRANCH_NO,
+      </if>
+      <if test="lastIp != null">
+        LAST_IP,
+      </if>
+      <if test="lastDate != null">
+        LAST_DATE,
+      </if>
+      <if test="wrongPwdCount != null">
+        WRONG_PWD_COUNT,
+      </if>
+      <if test="creator != null">
+        CREATOR,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="accountnonexpired != null">
+        accountNonExpired,
+      </if>
+      <if test="accountnonlocked != null">
+        accountNonLocked,
+      </if>
+      <if test="credentialsnonexpired != null">
+        credentialsNonExpired,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="checkStatus != null">
+        CHECK_STATUS,
+      </if>
+      <if test="checker != null">
+        CHECKER,
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME,
+      </if>
+      <if test="changePwdFlag != null">
+        CHANGE_PWD_FLAG,
+      </if>
+      <if test="filler1 != null">
+        FILLER1,
+      </if>
+      <if test="filler2 != null">
+        FILLER2,
+      </if>
+      <if test="filler3 != null">
+        FILLER3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="passwd != null">
+        #{passwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="branchNo != null">
+        #{branchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lastIp != null">
+        #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastDate != null">
+        #{lastDate,jdbcType=VARCHAR},
+      </if>
+      <if test="wrongPwdCount != null">
+        #{wrongPwdCount,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="accountnonexpired != null">
+        #{accountnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="accountnonlocked != null">
+        #{accountnonlocked,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsnonexpired != null">
+        #{credentialsnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null">
+        #{checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="checker != null">
+        #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        #{checkTime,jdbcType=VARCHAR},
+      </if>
+      <if test="changePwdFlag != null">
+        #{changePwdFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="filler1 != null">
+        #{filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="filler2 != null">
+        #{filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="filler3 != null">
+        #{filler3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cf.dao.model.system.UserExample" resultType="java.lang.Long">
+    select count(*) from cf_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update cf_user
+    <set>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.passwd != null">
+        PASSWD = #{record.passwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userName != null">
+        USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeId != null">
+        EMPLOYEE_ID = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.branchNo != null">
+        BRANCH_NO = #{record.branchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastIp != null">
+        LAST_IP = #{record.lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastDate != null">
+        LAST_DATE = #{record.lastDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wrongPwdCount != null">
+        WRONG_PWD_COUNT = #{record.wrongPwdCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.creator != null">
+        CREATOR = #{record.creator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountnonexpired != null">
+        accountNonExpired = #{record.accountnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountnonlocked != null">
+        accountNonLocked = #{record.accountnonlocked,jdbcType=VARCHAR},
+      </if>
+      <if test="record.credentialsnonexpired != null">
+        credentialsNonExpired = #{record.credentialsnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkStatus != null">
+        CHECK_STATUS = #{record.checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checker != null">
+        CHECKER = #{record.checker,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkTime != null">
+        CHECK_TIME = #{record.checkTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changePwdFlag != null">
+        CHANGE_PWD_FLAG = #{record.changePwdFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler1 != null">
+        FILLER1 = #{record.filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler2 != null">
+        FILLER2 = #{record.filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler3 != null">
+        FILLER3 = #{record.filler3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update cf_user
+    set USER_ID = #{record.userId,jdbcType=VARCHAR},
+      PASSWD = #{record.passwd,jdbcType=VARCHAR},
+      USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      EMPLOYEE_ID = #{record.employeeId,jdbcType=VARCHAR},
+      BRANCH_NO = #{record.branchNo,jdbcType=VARCHAR},
+      LAST_IP = #{record.lastIp,jdbcType=VARCHAR},
+      LAST_DATE = #{record.lastDate,jdbcType=VARCHAR},
+      WRONG_PWD_COUNT = #{record.wrongPwdCount,jdbcType=DECIMAL},
+      CREATOR = #{record.creator,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=VARCHAR},
+      accountNonExpired = #{record.accountnonexpired,jdbcType=VARCHAR},
+      accountNonLocked = #{record.accountnonlocked,jdbcType=VARCHAR},
+      credentialsNonExpired = #{record.credentialsnonexpired,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      CHECK_STATUS = #{record.checkStatus,jdbcType=VARCHAR},
+      CHECKER = #{record.checker,jdbcType=VARCHAR},
+      CHECK_TIME = #{record.checkTime,jdbcType=VARCHAR},
+      CHANGE_PWD_FLAG = #{record.changePwdFlag,jdbcType=VARCHAR},
+      FILLER1 = #{record.filler1,jdbcType=VARCHAR},
+      FILLER2 = #{record.filler2,jdbcType=VARCHAR},
+      FILLER3 = #{record.filler3,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cf.dao.model.system.User">
+    update cf_user
+    <set>
+      <if test="passwd != null">
+        PASSWD = #{passwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        EMPLOYEE_ID = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="branchNo != null">
+        BRANCH_NO = #{branchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lastIp != null">
+        LAST_IP = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastDate != null">
+        LAST_DATE = #{lastDate,jdbcType=VARCHAR},
+      </if>
+      <if test="wrongPwdCount != null">
+        WRONG_PWD_COUNT = #{wrongPwdCount,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null">
+        CREATOR = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="accountnonexpired != null">
+        accountNonExpired = #{accountnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="accountnonlocked != null">
+        accountNonLocked = #{accountnonlocked,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsnonexpired != null">
+        credentialsNonExpired = #{credentialsnonexpired,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null">
+        CHECK_STATUS = #{checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="checker != null">
+        CHECKER = #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME = #{checkTime,jdbcType=VARCHAR},
+      </if>
+      <if test="changePwdFlag != null">
+        CHANGE_PWD_FLAG = #{changePwdFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="filler1 != null">
+        FILLER1 = #{filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="filler2 != null">
+        FILLER2 = #{filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="filler3 != null">
+        FILLER3 = #{filler3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cf.dao.model.system.User">
+    update cf_user
+    set PASSWD = #{passwd,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      EMPLOYEE_ID = #{employeeId,jdbcType=VARCHAR},
+      BRANCH_NO = #{branchNo,jdbcType=VARCHAR},
+      LAST_IP = #{lastIp,jdbcType=VARCHAR},
+      LAST_DATE = #{lastDate,jdbcType=VARCHAR},
+      WRONG_PWD_COUNT = #{wrongPwdCount,jdbcType=DECIMAL},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      accountNonExpired = #{accountnonexpired,jdbcType=VARCHAR},
+      accountNonLocked = #{accountnonlocked,jdbcType=VARCHAR},
+      credentialsNonExpired = #{credentialsnonexpired,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      CHECK_STATUS = #{checkStatus,jdbcType=VARCHAR},
+      CHECKER = #{checker,jdbcType=VARCHAR},
+      CHECK_TIME = #{checkTime,jdbcType=VARCHAR},
+      CHANGE_PWD_FLAG = #{changePwdFlag,jdbcType=VARCHAR},
+      FILLER1 = #{filler1,jdbcType=VARCHAR},
+      FILLER2 = #{filler2,jdbcType=VARCHAR},
+      FILLER3 = #{filler3,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

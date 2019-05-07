@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cf.dao.mapper.system.OperateAuditsMapper">
+  <resultMap id="BaseResultMap" type="com.cf.dao.model.system.OperateAudits">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="IP" jdbcType="VARCHAR" property="ip" />
+    <result column="SESSION_ID" jdbcType="VARCHAR" property="sessionId" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="FILLER1" jdbcType="VARCHAR" property="filler1" />
+    <result column="FILLER2" jdbcType="VARCHAR" property="filler2" />
+    <result column="FILLER3" jdbcType="VARCHAR" property="filler3" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cf.dao.model.system.OperateAudits">
+    <result column="REQ_URL" jdbcType="LONGVARCHAR" property="reqUrl" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, IP, SESSION_ID, CREATE_TIME, USER_ID, FILLER1, FILLER2, FILLER3
+  </sql>
+  <sql id="Blob_Column_List">
+    REQ_URL
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.cf.dao.model.system.OperateAuditsExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sys_operate_audits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitSize >= 0">
+      limit #{limitStart} , #{limitSize}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.cf.dao.model.system.OperateAuditsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from sys_operate_audits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitSize >= 0">
+      limit #{limitStart} , #{limitSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sys_operate_audits
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_operate_audits
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cf.dao.model.system.OperateAuditsExample">
+    delete from sys_operate_audits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cf.dao.model.system.OperateAudits">
+    insert into sys_operate_audits (ID, IP, SESSION_ID, 
+      CREATE_TIME, USER_ID, FILLER1, 
+      FILLER2, FILLER3, REQ_URL
+      )
+    values (#{id,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{sessionId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{filler1,jdbcType=VARCHAR}, 
+      #{filler2,jdbcType=VARCHAR}, #{filler3,jdbcType=VARCHAR}, #{reqUrl,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cf.dao.model.system.OperateAudits">
+    insert into sys_operate_audits
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="ip != null">
+        IP,
+      </if>
+      <if test="sessionId != null">
+        SESSION_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="filler1 != null">
+        FILLER1,
+      </if>
+      <if test="filler2 != null">
+        FILLER2,
+      </if>
+      <if test="filler3 != null">
+        FILLER3,
+      </if>
+      <if test="reqUrl != null">
+        REQ_URL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionId != null">
+        #{sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="filler1 != null">
+        #{filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="filler2 != null">
+        #{filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="filler3 != null">
+        #{filler3,jdbcType=VARCHAR},
+      </if>
+      <if test="reqUrl != null">
+        #{reqUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cf.dao.model.system.OperateAuditsExample" resultType="java.lang.Long">
+    select count(*) from sys_operate_audits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update sys_operate_audits
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ip != null">
+        IP = #{record.ip,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sessionId != null">
+        SESSION_ID = #{record.sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler1 != null">
+        FILLER1 = #{record.filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler2 != null">
+        FILLER2 = #{record.filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filler3 != null">
+        FILLER3 = #{record.filler3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reqUrl != null">
+        REQ_URL = #{record.reqUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update sys_operate_audits
+    set ID = #{record.id,jdbcType=VARCHAR},
+      IP = #{record.ip,jdbcType=VARCHAR},
+      SESSION_ID = #{record.sessionId,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      FILLER1 = #{record.filler1,jdbcType=VARCHAR},
+      FILLER2 = #{record.filler2,jdbcType=VARCHAR},
+      FILLER3 = #{record.filler3,jdbcType=VARCHAR},
+      REQ_URL = #{record.reqUrl,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update sys_operate_audits
+    set ID = #{record.id,jdbcType=VARCHAR},
+      IP = #{record.ip,jdbcType=VARCHAR},
+      SESSION_ID = #{record.sessionId,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      FILLER1 = #{record.filler1,jdbcType=VARCHAR},
+      FILLER2 = #{record.filler2,jdbcType=VARCHAR},
+      FILLER3 = #{record.filler3,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cf.dao.model.system.OperateAudits">
+    update sys_operate_audits
+    <set>
+      <if test="ip != null">
+        IP = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionId != null">
+        SESSION_ID = #{sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="filler1 != null">
+        FILLER1 = #{filler1,jdbcType=VARCHAR},
+      </if>
+      <if test="filler2 != null">
+        FILLER2 = #{filler2,jdbcType=VARCHAR},
+      </if>
+      <if test="filler3 != null">
+        FILLER3 = #{filler3,jdbcType=VARCHAR},
+      </if>
+      <if test="reqUrl != null">
+        REQ_URL = #{reqUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cf.dao.model.system.OperateAudits">
+    update sys_operate_audits
+    set IP = #{ip,jdbcType=VARCHAR},
+      SESSION_ID = #{sessionId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      FILLER1 = #{filler1,jdbcType=VARCHAR},
+      FILLER2 = #{filler2,jdbcType=VARCHAR},
+      FILLER3 = #{filler3,jdbcType=VARCHAR},
+      REQ_URL = #{reqUrl,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cf.dao.model.system.OperateAudits">
+    update sys_operate_audits
+    set IP = #{ip,jdbcType=VARCHAR},
+      SESSION_ID = #{sessionId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      FILLER1 = #{filler1,jdbcType=VARCHAR},
+      FILLER2 = #{filler2,jdbcType=VARCHAR},
+      FILLER3 = #{filler3,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

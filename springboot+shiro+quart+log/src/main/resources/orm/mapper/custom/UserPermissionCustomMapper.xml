@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cf.dao.mapper.custom.UserPermissionCustomMapper">
+	<!-- 获取用户权限 -->
+	<select id="getUserPermission" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT DISTINCT URL FROM cf_resource A
+            INNER JOIN cf_role_resource B ON A.RES_ID=B.RES_ID
+            INNER JOIN cf_user_role C ON B.ROLE_ID=C.ROLE_ID
+        WHERE C.USER_ID= #{USER_ID} ORDER BY A.MORDER
+    </select>
+</mapper>
